@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Sneakers</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/components/navigation.js" defer></script>
+    <script src="assets/js/pages/accueil.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Sneaker Shop Logo">
+        </div>
+        <nav><a href="formulaire.html">Formulaire d'achat</a></nav> 
+    </header>
+    <main class="container">
+        <section id="product-detail" class="details-produit">
+            <h2>Détails du produit</h2>
+            <p>Sélectionnez une paire pour voir les détails.</p>
+        </section>
+        <section class="produits-container">
+            <h2>Nos Sneakers</h2>
+            <div class="tri-container">
+                <div id="sort-alpha" class="tri">Trier A-Z</div>
+                <div id="sort-reverse-alpha" class="tri">Trier Z-A</div>
+                <div id="sort-price-asc" class="tri">Prix Croissant</div>
+                <div id="sort-price-desc" class="tri">Prix Décroissant</div>
+            </div>
+            <div id="product-list" class="liste-produits"></div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Sneakers Boutique - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotion - Sneakers Boutique</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/pub.css">
+    <script type="module" src="assets/js/components/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Sneaker Shop Logo">
+        </div>
+        <nav></nav>
+    </header>
+
+    <main class="container pub-container">
+        <h1>Découvrez nos promotions exclusives !</h1>
+
+        <!-- Carrousel -->
+        <section class="carousel-section">
+            <div id="carousel" class="carousel">
+                <img src="assets/img/promo1.png" alt="Promotion 1" class="carousel-image active">
+                <img src="assets/img/promo2.png" alt="Promotion 2" class="carousel-image">
+                <img src="assets/img/promo3.png" alt="Promotion 3" class="carousel-image">
+            </div>
+            <div class="carousel-controls">
+                <button id="carousel-prev">◀</button>
+                <button id="carousel-next">▶</button>
+            </div>
+        </section>
+
+        <!-- Section à animer avec ScrollAnimator -->
+        <section class="scroll-section">
+            <div class="scroll-box">Livraison gratuite ce week-end !</div>
+            <div class="scroll-box">10% de rabais sur les Air Max</div>
+            <div class="scroll-box">Offre exclusive pour les membres</div>
+        </section>
+    </main>
+
+    <!-- Bouton de mode sombre -->
+    <div data-mode>
+        <button data-mode-option="nuit">🌙 Mode Nuit</button>
+        <button data-mode-option="jour" class="invisible">☀️ Mode Jour</button>
+    </div>
+
+    <footer>
+        <p>© 2025 Sneakers Boutique - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

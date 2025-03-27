@@ -1,0 +1,44 @@
+## Post-mortem - TP3 JavaScript
+
+# Fonctionnalités de la page
+Dans ce TP, j’ai réalisé une page publicitaire avec plusieurs fonctionnalités dynamiques. On retrouve 
+un carrousel d’images, une boîte modale qui s’affiche automatiquement après 5 secondes, un mode sombre/clair 
+avec persistance dans le localStorage, ainsi qu’un effet d’animation des éléments lors du défilement 
+(ScrollAnimator). Sur la page d’accueil, il est aussi possible de trier les produits (par prix ou par nom) 
+et d’afficher leurs détails.
+
+# Choix de design
+Pour le visuel, j’ai essayé de garder quelque chose de simple mais lisible. J’ai utilisé des couleurs contrastées 
+selon le thème (clair/sombre), des coins arrondis, un peu d’ombre et de l’espace entre les éléments. L’idée était 
+de rendre la navigation plus agréable. Les animations ajoutées rendent aussi l’interface plus vivante.
+
+# Difficultés rencontrées
+Voici les principales difficultés que j’ai rencontrées :
+- Comprendre et utiliser les modules JavaScript : l'import/export peut causer des erreurs si les chemins ne sont pas corrects 
+ou si le navigateur ne charge pas le module (erreurs 404, par exemple).
+- Comprendre le fonctionnement de l'API IntersectionObserver : ce n’était pas facile au début, surtout pour ajuster les options comme le threshold.
+- Configurer et utiliser localStorage : sauvegarder l’état du mode sombre ou la fermeture de la modale exigeait de bien comprendre 
+comment fonctionne le stockage persistant.
+- Suivre les consignes du professeur tout en gardant une structure claire et modulaire : il fallait s'assurer que tout soit fonctionnel, 
+même sans transformer chaque page en module.
+- S'assurer de la persistance des états : j’ai fait en sorte que les préférences utilisateur (comme le thème) soient conservées après rechargement.
+
+# Structure du code
+J’ai séparé mon code JavaScript par fonctionnalités. J’ai un fichier pour la modale, un pour le carrousel, 
+un pour la navigation, un pour le mode sombre, un pour ScrollAnimator, etc.
+Seules les pages demandées ont été transformées en modules comme indiqué dans le TP. Le reste est resté 
+en script normal. Le script principal (main.js) est encapsulé dans une IIFE.
+
+# Organisation des fichiers
+Voici l’organisation de mes fichiers :
+ - assets/js/ → contient tous les scripts JS (classés en dossiers components, pages, classes)
+ - assets/css/ → les styles CSS, incluant la page pub
+ - assets/img/ → toutes les images du projet
+ - Pages HTML séparées selon les exigences (accueil, formulaire, pub, contact, etc.)
+
+# Tests et qualité du code
+J’ai testé la page en rechargeant plusieurs fois pour vérifier que le localStorage fonctionne bien. 
+J’ai aussi vérifié que les animations et les fonctionnalités fonctionnent dans plusieurs navigateurs. 
+J’ai commenté mon code avec des blocs JSDoc pour respecter les standards du cours. J’ai utilisé des noms 
+de variables clairs.
+

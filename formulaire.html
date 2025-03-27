@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Validation de l'achat</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/components/navigation.js" defer></script>
+    <script src="assets/js/pages/formulaire.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Sneaker Shop Logo">
+        </div>
+        <nav></nav>
+    </header>
+
+    <main class="container">
+        <h1>Validation de l'achat</h1>
+
+        <!-- Formulaire multi-étapes -->
+        <form id="form-achat" novalidate>
+            
+            <!-- ÉTAPE 1 : Informations personnelles -->
+            <section class="form-step active" id="step-1">
+                <h2>Étape 1 - Informations personnelles</h2>
+                
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="nomComplet">Nom complet *</label>
+                        <input type="text" id="nomComplet" name="nomComplet" required placeholder="Ex: Emily Bouchard">
+                        <span class="erreur-champ"></span>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="adresse">Adresse *</label>
+                        <input type="text" id="adresse" name="adresse" required placeholder="Ex: 2030, boul Pie-IX">
+                        <span class="erreur-champ"></span>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="courriel">Courriel *</label>
+                        <input type="email" id="courriel" name="courriel" required placeholder="votre@email.com">
+                        <span class="erreur-champ"></span>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="ville">Ville *</label>
+                        <input type="text" id="ville" name="ville" required placeholder="Ex: Montréal">
+                        <span class="erreur-champ"></span>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="telephone">Numéro de téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required placeholder="+1 555-555-5555">
+                        <span class="erreur-champ"></span>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="codePostal">Code postal *</label>
+                        <input type="text" id="codePostal" name="codePostal" required placeholder="Ex: H0H 0H0">
+                        <span class="erreur-champ"></span>
+                    </div>
+                </div>
+            
+                <div class="buttons">
+                    <button type="button" id="btn-etape1-suivant" disabled>Continuer</button>
+                </div>
+            </section>            
+
+            <section class="form-step" id="step-2">
+                <h2>Étape 2 - Informations de la commande</h2>
+            
+                <div class="form-column">
+                    <!-- Date de livraison -->
+                    <div class="form-group">
+                        <label for="dateLivraison">Date idéale de livraison <span>*</span></label>
+                        <input 
+                            type="date" 
+                            id="dateLivraison" 
+                            name="dateLivraison" 
+                            required 
+                            placeholder="aaaa-mm-jj"
+                        >
+                        <span class="erreur-champ"></span>
+                    </div>
+            
+                    <!-- Ligne combinée : Livraison en magasin + Succursale -->
+                    <div class="row-livraison">Livraison en magasin
+                        <!-- Checkbox Livraison en magasin -->
+                        <label class="checkbox-label" for="livraisonMagasin">
+                            <input 
+                                type="checkbox" 
+                                id="livraisonMagasin" 
+                                name="livraisonMagasin"
+                            >
+                            
+                        </label>
+            
+                        <!-- Succursale de retrait (désactivé par défaut) -->
+                        <div class="succursale-container">
+                            <label for="succursale"></label>
+                            <select id="succursale" name="succursale" disabled>
+                                <option value="">Succursale de Québec</option>
+                                <option value="Montreal">Succursale de Montréal</option>
+                                <option value="Quebec">Succursale de Québec</option>
+                            </select>
+                            <span class="erreur-champ"></span>
+                        </div>
+                    </div>
+            
+                    <!-- Service de livraison (radios) -->
+                    <div class="form-group service-livraison">
+                        <p>Service de livraison *</p>
+                        <label>
+                            <input type="radio" name="serviceLivraison" value="Poste Canada" required>
+                            Poste Canada
+                        </label>
+                        <label>
+                            <input type="radio" name="serviceLivraison" value="FedEx" required>
+                            FedEx
+                        </label>
+                        <label>
+                            <input type="radio" name="serviceLivraison" value="UPS" required>
+                            UPS
+                        </label>
+                    </div>                    
+            
+                <!-- Boutons -->
+                <div class="buttons">
+                    <button type="button" id="btn-etape2-retour">Retour</button>
+                    <button type="button" id="btn-etape2-suivant" disabled>Continuer</button>
+                </div>
+            </section>
+            
+            <!-- ÉTAPE 3 : (optionnelle) Infos supplémentaires -->
+            <!-- Tu peux insérer une 3e étape si tu veux plus de champs -->
+            <section class="form-step" id="step-3">
+                <h2>Étape 3 - Infos supplémentaires (exemple)</h2>
+
+                <div class="form-group">
+                    <label for="commentaires">Commentaires / instructions</label>
+                    <textarea id="commentaires" name="commentaires" rows="3"
+                              placeholder="Écrivez vos instructions..."></textarea>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" id="btn-etape3-retour">Retour</button>
+                    <button type="button" id="btn-etape3-suivant" disabled>Continuer</button>
+                </div>
+            </section>
+
+            <!-- ÉTAPE 4 : Résumé -->
+            <section class="form-step" id="step-4">
+                <h2>Étape 4 - Résumé</h2>
+                <div id="resume">
+                    <!-- Le résumé s’affichera ici -->
+                </div>
+
+                <div class="buttons">
+                    <button type="button" id="btn-etape4-retour">Retour</button>
+                    <button type="submit" id="btn-confirmation">Confirmer</button>
+                </div>
+            </section>
+        </form>
+
+        <!-- Message de confirmation (caché par défaut) -->
+        <div id="confirmation" class="confirmation hidden">
+            <h2>Exemple d'achat de baskets</h2>
+            <p>Merci, nous avons bien reçu votre commande !</p>
+        </div>        
+
+    </main>
+
+    <footer>
+        <p>© 2025 Sneakers Boutique - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
